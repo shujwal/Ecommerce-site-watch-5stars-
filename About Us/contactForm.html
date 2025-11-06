@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Feedback</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: #d5d5d5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .feedback-form{
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        width: 400px;
+    }
+    
+    h1{
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 40px;
+        color: black;
+    }
+
+    .form-group{
+        margin-bottom: 20px;
+    }
+
+    label{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: black;
+    }
+
+    input, textarea{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d5d5d5;
+        border-radius: 5px;
+        font-size: 15px;
+        box-sizing: border-box;
+        resize: vertical;
+    }
+
+    button{
+        display: block;
+        margin: auto;
+        background: #ff5a00;
+        color: #fff;
+        border: none;
+        padding: 12px 17px;
+        border-radius: 5px;
+        font-size: 15px;
+        box-shadow: 0 2px 5px black;
+        cursor: pointer;
+    }
+
+    button :hover{
+        background-color: #45a049;
+    }
+
+    i{
+        position: absolute;
+        color: #cf0505e9;
+        font-size: 22px;
+        margin-top: 10px;
+        left: 940px;
+    }
+
+    span{
+        color: red;
+    }
+
+</style>
+<body>
+    <button class="button" style="margin-right: 60px; border: 0.5px black solid;"><a href="/About Us/index.html" style="padding: 5px; text-decoration: none;">GO Back</a></button>
+    <form class="feedback-form" action="#">
+        <h1>Contact Form</h1>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" placeholder="eg. Ram" id="name" />
+            <i class="fa-solid"></i>
+            <span id="nameError"></span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" placeholder="eg. ram@gmail.com" id="email" />
+            <i class="fa-solid"></i>
+            <span id="emailError"></span>
+        </div>
+        <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" placeholder="Subject" id="subject" />
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="" id="message" placeholder="Message"></textarea>
+            <i class="fa-solid"></i>
+            <span id="messageError"></span>
+        </div>
+        <div class="form-group">
+            <button id="submitBtn">Send Message</button>
+        </div>
+    </form>
+    
+    <script>
+        
+        
+        // creating variables 
+        const submitBtn = document.getElementById('submitBtn');
+        const nameError = document.getElementById('nameError');
+        const emailError = document.getElementById('emailError');
+        const messageError = document.getElementById('messageError');
+        
+        // what happens when you click the 'send message' button (also called submitBtn)
+        submitBtn.addEventListener('click', (e) => {  // using arrow function 
+            e.preventDefault();   
+
+            // checking valid inputs
+            if(validateName() && validateEmail() && validateMessage()){
+                // creating popup if input is valid
+                const dialog = document.createElement('dialog');
+                dialog.innerHTML = `
+                    <div class="dialog-content">
+                    <button class="dialog-close-btn">×</button>
+                    <h3>Thank You!</h3>
+                    <p>Your message has been received. We'll get back to you soon.</p>
+                    </div>
+                `;
+                document.body.appendChild(dialog);
+                dialog.showModal(); // show the popup [showModal(): void;]
+
+                // make close button works
+                dialog.querySelector('.dialog-close-btn').addEventListener('click', () => {
+                    dialog.close();   
+                });
+            }
+        });
+        // check valid name
+        function validateName(){
+            let name = document.getElementById('name').value;
+
+            // checking if name is empty
+            if(name == ''){
+                // if name is empty show the below text
+                nameError.innerHTML = "Name is required!";
+                return false;
+            }
+
+            // checking if the written name is full name or not
+            if(!name.match(/^[A-Za-z]+\ +[A-Za-z]+$/)){
+                nameError.innerHTML = "Write full name! (eg:- Ram Charan)";
+                return false;
+            }
+            // if none of the above condition are met then display nothing and return true
+            nameError.innerHTML='';
+            return true;
+        }
+
+        // check valid email
+        function validateEmail(){
+            let email = document.getElementById('email').value;
+
+            // checking if email is empty
+            if(email == ''){
+                emailError.innerHTML = "Email is required!";
+                return false;
+            }
+            
+            // checking if the written email is valid or not,  (/^[A-Za-z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]$/)
+            if(!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)){
+                emailError.innerHTML = "Enter valid email! (eg:- abc@gmail.com)";
+                return false;
+            }
+
+        // if none of the above condition are met then display nothing and return true
+        emailError.innerHTML='';
+        return true;
+            
+        }
+
+        // check valid message
+        function validateMessage(){
+            let message = document.getElementById('message').value;
+
+            // checking if message is empty
+            if(message == ''){
+                messageError.innerHTML = "Message is required!";
+                return false;
+            }
+
+            // checking if the written message is more then 10 letters or not
+            if(message.length < 10){
+                messageError.innerHTML = "More then 10 letters are required!";
+                return false;
+            }
+
+        // if none of the above condition are met then display nothing and return true
+        messageError.innerHTML='';
+        return true;
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/595a8903111.js" crossorigin="anonymous"></script>
+</body>
+</html>

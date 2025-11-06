@@ -1,0 +1,637 @@
+/* universal selector  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  Body Styles
+  ------------
+  Sets the font family, background color, and margin for the body element.
+*/
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: rgb(229, 230, 232);
+  font-family: "Comic Sans Ms", Arial, Helvetica, sans-serif;
+}
+
+/* 
+  Container Styles
+  ----------------
+  Sets the background image and size for the container element.
+*/
+
+#container {
+  background-image: url();
+  background-size: cover;
+}
+/* setting scroll behaviour of our page  */
+html {
+  scroll-behavior: smooth;
+}
+/* 
+  Main Styles
+  ------------
+  Sets the display, justify content, and other styles for the main element.
+*/
+
+#main {
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+  Main Image Styles
+  -----------------
+  Sets the height, border radius, and other styles for the main image element.
+*/
+
+#main img {
+  height: 50px;
+  border-radius: 25%;
+}
+
+/* 
+  Main Heading Styles
+  -------------------
+  Sets the font family, display, font size, animation, and other styles for the main heading element.
+*/
+
+#main h1 {
+  font-family: "Hansel Rough", Arial, Helvetica, sans-serif;
+  display: inline;
+  font-size: 45px;
+  animation: 3s clr;
+  animation-iteration-count: infinite;
+  transition: 0.9s all;
+  animation-timing-function: ease-in-out;
+}
+
+/* 
+  Color Animation
+  ---------------
+  Defines the color animation for the main heading element.
+*/
+/* using keyframe query to change color of heading  */
+@keyframes clr {
+  0% {
+    color: black;
+  }
+
+  25% {
+    color: rgb(72, 60, 179);
+  }
+
+  50% {
+    color: rgb(72, 60, 179);
+  }
+
+  75% {
+    color: gray;
+  }
+
+  100% {
+    color: sandybrown;
+  }
+}
+
+/* 
+  Navigation Styles
+  -----------------
+  Sets the display, background color, justify content, and other styles for the navigation element.
+*/
+
+.nav {
+  display: flex;
+  background-color: rgb(0, 2, 100);
+  justify-content: space-evenly;
+}
+/* for logo in the left side of the nav
+  -----------
+ */
+.logo {
+  width: max-content;
+  font-size: 40px;
+  padding-left: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.6s all ease-out;
+  word-spacing: 0;
+  display: flex;
+  align-items: center;
+}
+.logo:hover {
+  transition: 0.4s ease all;
+  position: relative;
+  transform: scale(0.9);
+  cursor: pointer;
+  transition: 0.9s all ease-out;
+}
+/* 
+  Navigation List Styles
+  ----------------------
+  Sets the display, position, width, background color, and other styles for the navigation list element.
+*/
+
+.nav ul {
+  position: sticky;
+  display: inline-block;
+  width: 100%;
+  background-color: rgb(0, 2, 100);
+  padding-left: 50px;
+}
+
+/* 
+  Navigation List Item Styles
+  ---------------------------
+  Sets the display, position, and other styles for the navigation list item element.
+*/
+
+.nav ul li {
+  display: inline-block;
+  position: relative;
+}
+/* 
+  Navigation List Item Link Styles
+  --------------------------------
+  Sets the display, color, text decoration, text transform, padding, transition, and other styles for the navigation list item link element.
+*/
+
+.nav ul li a {
+  display: inline-block;
+  color: #ffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px;
+  transition: 0.4s all ease;
+  cursor: pointer;
+}
+
+/* 
+  Navigation List Item Link Hover Styles
+  --------------------------------------
+  Sets the styles for the navigation list item link element on hover.
+*/
+
+.nav ul li a:hover {
+  background-color: rgb(0, 2, 100);
+  color: #fff;
+}
+
+/* 
+  Navigation List Item Hover Styles
+  ---------------------------------
+  Sets the styles for the navigation list item element on hover.
+*/
+
+.nav ul li:hover {
+  background-color: rgb(224, 224, 234);
+  color: #fff;
+}
+
+.nav .ll {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 789px;
+}
+/* 
+  Search Input Styles
+  -------------------
+  Sets the height, width, border, border radius, transition, and other styles for the search input element.
+*/
+
+.nav input {
+  height: 25px;
+  width: 145px;
+  border: 2px solid rgb(232, 232, 240);
+  border-radius: 5px;
+  transition: 0.8s all ease;
+}
+/* 
+  Search Input Hover Styles
+  -------------------------
+  Sets the styles for the search input element on hover.
+*/
+.nav input:hover {
+  width: 180px;
+}
+
+/* 
+  Icon Styles
+  ------------
+  Sets the cursor style for the icon element.
+*/
+
+.nav i {
+  cursor: pointer;
+}
+
+/* mid css */
+/* 
+  Banner Styles
+  -------------
+  Sets the width, height, text alignment, margin, display, background color, border radius, padding, and other styles for the banner element.
+*/
+
+.Banner {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  border-radius: 25px;
+}
+
+.Banner {
+  background-color: #ded2db;
+  height: 400px;
+  width: 350px;
+  border-radius: 25px;
+  padding: 3px 3px;
+  position: fixed;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+/* 
+  Close Button Styles
+  -------------------
+  Sets the margin, border, cursor, display, height, width, font weight, font size, background color, color, and other styles for the close button element.
+*/
+
+#close {
+  margin: 0 0 2px auto;
+  border: none;
+  cursor: pointer;
+  display: block;
+  /* height: 35px;  */
+  width: 30px;
+  font-weight: 999;
+  font-size: 20px;
+  background-color: #ded2db;
+  color: #000000e7;
+}
+
+/* 
+  Close Button Hover Styles
+  -------------------------
+  Sets the styles for the close button element on hover.
+*/
+
+#close:hover {
+  background-color: rgb(172, 174, 187);
+}
+
+/* 
+  Button Styles
+  -------------
+  Sets the text alignment, display, justify content, and other styles for the button element.
+*/
+
+.btn {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* 
+  Heading Styles
+  -------------
+  Sets the text alignment, font, margin, padding, and other styles for the heading element.
+*/
+
+h3 {
+  text-align: center;
+  font: 3px 3px;
+  margin: 0;
+  padding-top: 10px;
+}
+
+/* 
+  Anchor Styles
+  -------------
+  Sets the text decoration style for the anchor element.
+*/
+
+a {
+  text-decoration: none;
+}
+
+/* 
+  Heading Styles
+  -------------
+  Sets the display, justify content, padding, position, cursor, and other styles for the heading element.
+*/
+.h1 {
+  display: flex;
+  justify-content: right;
+  padding: 10px 90px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 
+  Span Styles
+  ------------
+  Sets the text alignment, font size, padding, and other styles for the span element.
+*/
+
+span {
+  text-align: center;
+  font-size: 15px;
+  padding-left: 5px;
+}
+/* 
+  Watch Styles
+  ------------
+  Sets the display, justify content, padding, and other styles for the watch element.
+*/
+
+.watchs {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+/* 
+  Content Styles
+  -------------
+  Sets the display, flex wrap, width, justify content, align items, margin, and other styles for the content element.
+*/
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 16px 0;
+}
+
+.content {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: 0.4s;
+  background: #f2f2f2;
+}
+
+.content:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px, -8px);
+}
+
+/* 
+  Content Image Styles
+  -------------------
+  Sets the width, height, text alignment, margin, object fit, and border radius for the content image element.
+*/
+
+.content img {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  margin: 0 auto;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* 
+  Paragraph Styles
+  ----------------
+  Sets the text alignment, color, and padding for the paragraph element.
+*/
+
+p {
+  text-align: center;
+  color: #b2bec3;
+  padding-top: 0 8px;
+}
+
+/* 
+  Heading 4 Styles
+  ----------------
+  Sets the font size, text alignment, color, and margin for the heading 4 element.
+*/
+
+.h4 {
+  font-size: 26px;
+  text-align: center;
+  color: rgb(0, 36, 128);
+  margin: 0;
+}
+
+/* 
+  Container Styles
+  ----------------
+  Sets the width and height for the container element.
+*/
+
+.container {
+  width: 100px;
+  height: 100px;
+}
+
+/* 
+  Button Styles
+  -------------
+  These styles are applied to the buttons within the content section.
+  They set the background color, padding, width, color, border radius, and transition.
+*/
+
+button {
+  background-color: rgb(0, 36, 128);
+  padding: 10px;
+  width: 40%;
+  color: rgb(149, 135, 135);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* 
+  Button Hover Styles
+  -------------------
+  These styles are applied to the buttons within the content section when they are hovered over.
+  They set the background color and text color.
+*/
+
+button:hover {
+  background-color: rgb(11, 11, 12);
+  color: #ece9e2;
+}
+
+/* footer css */
+/* 
+  Footer Styles
+  -------------
+  These styles are applied to the footer section of the website.
+  They set the display, background color, color, justify content, padding, bottom, and width.
+*/
+#footer {
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+  justify-content: space-between;
+  padding: 50px;
+  bottom: 100px;
+  width: 100%;
+}
+
+/* 
+  Footer 1 Styles
+  ---------------
+  These styles are applied to the first section of the footer.
+  They set the display, flex direction, and other styles.
+*/
+
+.footer1 {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 
+  Footer 1 Heading Styles
+  ------------------------
+  These styles are applied to the heading within the footer 1 section.
+  They set the display and justify content.
+*/
+
+.footer1 h1 {
+  display: flex;
+  justify-content: center;
+}
+/* 
+  Footer 1 Image Styles
+  ---------------------
+  These styles are applied to the image within the footer 1 section.
+  They set the height.
+*/
+.footer1 img {
+  height: 40px;
+}
+
+/* 
+  Footer List Styles
+  ------------------
+  Sets the margin bottom and list style for the footer list element.
+*/
+
+.foot ul {
+  margin-bottom: 6px;
+  list-style: none;
+}
+
+/* 
+  Footer List Heading Styles
+  -------------------------
+  Sets the padding bottom and padding left for the footer list heading element.
+*/
+
+.foot ul h3 {
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+/* 
+  Footer List Item Styles
+  ----------------------
+  Sets the padding left for the footer list item element.
+*/
+.foot li {
+  padding-left: 10px;
+}
+/* 
+  Footer List Item Link Styles
+  ---------------------------
+  Sets the text decoration and color for the footer list item link element.
+*/
+.foot a {
+  text-decoration: none;
+  color: #e9e4e4;
+}
+/* 
+  Footer 1 Styles
+  ---------------
+  Sets the float, font family, display, padding left, and other styles for the footer 1 element.
+*/
+.foot1 {
+  float: right;
+}
+
+.foot1 h4 {
+  font-family: "Comic Sans Ms", Arial, Helvetica, sans-serif;
+  display: inline;
+  padding-left: 5px;
+}
+/* 
+  Footer 1 Icon Styles
+  ---------------------
+  Sets the padding top for the footer 1 icon element.
+*/
+.foot1 i {
+  padding-top: 8px;
+}
+/* 
+  Footer 1 Icon Hover Styles
+  -------------------------
+  Sets the color for the footer 1 icon element on hover.
+*/
+.fa-brands:hover {
+  color: #14a9ce;
+}
+/* 
+  Footer 1 Heading Styles
+  ------------------------
+  Sets the padding bottom and text alignment for the footer 1 heading element.
+*/
+.foot1 h3 {
+  padding-bottom: 10px;
+  text-align: left;
+}
+/* 
+  Footer 1 Link Styles
+  ---------------------
+  Sets the padding top, text decoration, color, font size, and transition for the footer 1 link element.
+*/
+.foot1 a {
+  padding-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: 0.9s all ease;
+}
+/* 
+  Footer List Item Hover Styles
+  ---------------------------
+  Sets the background color and border radius for the footer list item element on hover.
+*/
+#footer .foot li:hover {
+  background-color: #008cba;
+  border-radius: 5px;
+}
+
+/* for aligning the buttom together*/
+/* 
+  Flex Styles
+  ------------
+  Sets the display, justify content, and width for the flex element.
+*/
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+  width: 85%;
+  margin-bottom: 8px;
+}
+/* 
+  Button Styles
+  -------------
+  Sets the margin bottom for the button element.
+*/
+button {
+  margin-bottom: 10px;
+}

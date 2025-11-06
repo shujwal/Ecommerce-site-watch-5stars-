@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <style>
+        /* ------- for the body  */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E6E6FA;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fffffff6;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(165, 75, 75, 0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        /* -------- fir the buttom  */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error-message {
+            color: red;
+        }
+        .forgot-password {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">    
+        <!-- ------------ go back button ---------  -->
+        <a href="/Home/index.html"><button style="width: fit-content;">GO-BACK</button></a>
+        <!-- --------- text (sign-in) ----------  -->
+        <h2>Sign In</h2>
+        <form id="sign-inForm">
+            <!-- ---------------- username input -------------  -->
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" >
+            <span class="error-message" id="error-user"></span>
+            <!-- ------------ password input --------------------  -->
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" >
+            <span class="error-message" id="error-pass"></span>
+            <!-- -------------- sign in button ---------------  -->
+            <span class="error-message" id="error-message"></span>
+            <button type="submit">Sign In</button>
+            <!-- ------------------- text ---------------  -->
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <p style="margin: 0;">Already has an account? <a href="#">log in</a></p>
+        </form>
+    </div>
+
+    <script>
+        // function start working when the form having id 'sign-inform' is submitted (ie sign in button is clicked)
+        document.getElementById('sign-inForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Get form data
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // validation if the required fields are empty------------
+            if (username == "" && password == "") {
+                errorMessage.innerHTML = "Please fill out both fields!";
+                return;
+            };
+            if (username == ''){
+                errorMessage.innerHTML = "Please fill out Username!";
+                return;
+            };
+            if (password == ''){
+                errorMessage.innerHTML = "Please fill out Password!";
+                return;
+            };
+            // validation if the indered data fulfilled required criteria (using functions)
+            if (validateUser() && validatePass()){
+                errorMessage.innerHTML = '';
+                document.getElementById("error-user").innerHTML = "";
+                alert("THANK YOU for signing in !!!");
+            };
+            // function to check if endered data in username fulfill the criteria
+            function validateUser(){
+                if (username.length < 3){
+                    document.getElementById("error-user").innerHTML = "Username should be more than of 2 letters!";
+                    return false;
+                }
+                document.getElementById("error-user").innerHTML = "Thank you!";
+                return true;
+            };
+            // function to check if endered data in password fulfill the required criteria
+            function validatePass(){
+                if(password.length < 8){
+                    document.getElementById("error-pass").innerHTML = "Password should be of more than 8 letters!";
+                    return false;
+                }
+                document.getElementById("error-pass").innerHTML = "Thank you!";
+                return true;
+            };
+        });
+    </script>
+</body>
+</html>

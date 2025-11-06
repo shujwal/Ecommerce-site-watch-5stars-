@@ -1,0 +1,182 @@
+/* --- universal selector------ */
+*{
+    padding: 0;
+    margin: 5px 10px;
+}
+body{
+    /* background-color: aliceblue; */
+    background-color: bisque;
+    font-family: Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+p{
+    text-align: justify;
+}
+/* --------- navigation bar--------  */
+#nav-bar {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  /* --------- logo (5ACES)------- */
+.logo > h3 {
+  width: max-content;
+  font-size: 40px;
+  font-family: sans-serif, Helvetica, Arial;
+  transition: 0.6s all ease-out;
+}
+.logo > h3:hover {
+  transition: 0.4s ease all;
+  position: relative;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.9s all ease-out;
+}
+/* -------- links to different pages-------  */
+.links {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-evenly;
+  width: max-content;
+  padding-right: 400px;
+}
+.links ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  padding-top: 50px;
+  /* background-color: yellow; */
+}
+.links ul li a {
+  text-decoration: none;
+  color:rgb(255, 255, 255);
+  font-weight: 800;
+  position: relative;
+  transition: all ease 0.9s;
+  letter-spacing: 0;
+  padding: 3px;
+  border-radius: 6px;
+}
+.links ul li a:hover {
+  letter-spacing: 3px;
+  color: #e329ae;
+}
+/* -----about section - (section just below the nav bar)-----  */
+.about{
+    display: flex;
+    background-color: aliceblue;
+    width: 95%;
+    padding: 10px;
+    
+}
+.about>div{
+    text-align: center;
+}
+.about figure img{
+    width: 400px;
+    margin-top: 80px;
+}
+/* -------- section describing pasitive and negative impact of tech in watch making */
+.PositiveNegative{
+    width: 95%;
+    margin-top: 4em;
+    display: flex;
+    justify-content: space-between;
+    background-color: antiquewhite;
+}
+.PositiveNegative img{
+    width: 400px;
+    height: 300px;
+}
+.PositiveNegative div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 50%;
+}
+.PositiveNegative div div{
+    width: 90%;
+}
+.PositiveNegative div div p{
+    width: 71%;
+    height: 300px;
+    overflow-y: scroll;
+    padding: 8px;
+    background-color: aliceblue;
+}
+/* ------------ how tech can boost watch sales------------  */
+.tech{
+    display: flex;
+    width: 95%;
+    padding: 8px;
+    background-color: rgba(245, 245, 220, 0.633);
+}
+.tech figure img{
+    width: 400px;
+}
+.parent-container{
+    background-color: aliceblue;
+    padding: 8px;
+    border-radius: 50px;
+}
+/* --------- Read More / Less button  */
+#button{
+    color: #0984e3;
+    cursor: pointer;
+}
+/* ---------- hidden text  */
+#more{
+    display: none;
+}
+/* ------------- conclusion -------------- */
+.conc{
+    display: flex;
+    background-color: aliceblue;
+    width: 95%;
+    padding: 10px;
+    margin-top: 4em;
+}
+.conc>div{
+    text-align: center;
+}
+.conc figure img{
+    width: 300px;
+}
+/* -------------- footer ------------- */
+footer {
+  background-color: rgba(0, 0, 0, 0.077);
+  width: 80%;
+  height: fit-content;
+  padding: 0;
+  margin-top: 8em;
+  text-align: center;
+}
+footer > div{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 90px
+}
+.foot1 h4 {
+  font-family: "Comic Sans Ms", Arial, Helvetica, sans-serif;
+  display: inline;
+  padding-left: 5px;
+}
+.foot1 i {
+  padding-top: 8px;
+}
+.foot1 h3 {
+  padding-top: 2px;
+  text-align: left;
+}
+.foot1 a {
+  padding-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+  transition: 0.9s all ease;
+}

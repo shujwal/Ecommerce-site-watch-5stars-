@@ -1,0 +1,142 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+/* ------- for the header---------  */
+header {
+    background-color: rgb(250, 235, 215);
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+/* ----------- navigation bar ---------------  */
+#nav-bar {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+  }
+/* -------- 5ACES logo -----------  */
+.logo>h3{
+  /* background-color: yellow; */
+  width: max-content;
+  font-size: 40px;
+  padding-left: 20px;
+  margin-top: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: 0.6s all ease-out;
+}
+.logo > h3:hover {
+  transition: 0.4s ease all;
+  position: relative;
+  transform: scale(1.1);
+  cursor: pointer;
+  transition: 0.9s all ease-out;
+}
+/* ------------------- links to other pages --------------- */
+.links {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-evenly;
+  width: max-content;
+  padding-right: 500px;
+  margin-top: 20px;
+}
+.links ul {
+  display: flex;
+  list-style: none;
+  gap: 60px;
+  padding-top: 30px;
+  /* background-color: yellow; */
+}
+.links ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 800;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: relative;
+  transition: all ease 0.9s;
+  letter-spacing: 0;
+  padding: 3px;
+  border-radius: 6px;
+}
+.links ul li a:hover {
+  letter-spacing: 3px ;
+  color: #fbc2eb;
+}
+/* -------------main (evert thing below the nav bar and above footer)  */
+main {
+    padding: 20px;
+}
+
+h2 {
+    color: #444;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+.daraz, .thulo, .casio {
+  margin: 2em 0;
+  background-color: aliceblue;
+  padding-left: 4px;
+  border-radius: 10px;
+}
+.daraz-pic, .thulo-pic, .casio-pic{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+h4{
+  font-size: 20px;
+}
+figure img{
+  width: 600px;
+}
+.homepage-images {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.homepage-images div {
+    text-align: center;
+}
+
+.homepage-images img {
+    width: 300px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+/* --------------- for footer ---------- */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    margin-top: 20px;
+}
